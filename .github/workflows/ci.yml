@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14, 16, 18]
 
     steps:
     - uses: actions/checkout@v3
@@ -26,5 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: npm install --no-package-lock
-    - name: Run All Validations
+    - name: Run All Validations (npm)
       run: npm run ci
+    - name: Run All Validations (yarn)
+      run: yarn run ci
