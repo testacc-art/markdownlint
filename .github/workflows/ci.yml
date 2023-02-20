@@ -27,6 +27,9 @@ jobs:
     - name: Set the correct Node version using nvm
       shell: bash -l {0} 
       run: nvm install v14
+    - name: Set the correct Node version
+      shell: bash -l {0} 
+      run: nvm use v14
     - run: node --version
     - name: Install Dependencies
       run: npm install --no-package-lock
